@@ -1,4 +1,4 @@
-package projeto_poo;
+package controle;
 
 import java.util.Scanner;
 

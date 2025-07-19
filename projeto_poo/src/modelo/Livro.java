@@ -1,4 +1,4 @@
-package projeto_poo;
+package modelo;
 
 public class Livro extends Obra {
 
@@ -7,7 +7,7 @@ public class Livro extends Obra {
 		super(Codigo, Titulo, Autor, AnoPublicacao, Status);
 	}
 
-	public int getTempoEmprestimo(int Dias) {
+	public int getTempoEmprestimo() {
 		return 7;
 	}
 }

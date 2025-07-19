@@ -1,4 +1,4 @@
-package projeto_poo;
+package modelo;
 
 public enum TipoUsuario {
 	ALUNO,

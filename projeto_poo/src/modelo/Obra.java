@@ -1,4 +1,4 @@
-package projeto_poo;
+package modelo;
 
 public abstract class Obra {
 
@@ -8,7 +8,7 @@ public abstract class Obra {
 	protected int AnoPublicacao;
 	protected String Status;
 
-//construtor padrão
+// Construtor
 	public Obra(int Codigo, String Titulo, String Autor, int AnoPublicacao, String Status) {
 
 		this.Codigo = Codigo;
@@ -16,8 +16,14 @@ public abstract class Obra {
 		this.Autor = Autor;
 		this.AnoPublicacao = AnoPublicacao;
 		this.Status = Status;
-}
-		
-public abstract int getTempoEmprestimo(int Dias);
+	}
 
-} 
+// Método tempo de empréstimo
+	public abstract int getTempoEmprestimo();
+
+// Método de status da obra
+	public void setStatus(String status) {
+		this.Status = status;
+	}
+
+}
