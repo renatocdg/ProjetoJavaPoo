@@ -25,5 +25,7 @@ public abstract class Obra {
 	public void setStatus(String status) {
 		this.Status = status;
 	}
-
+	public int getCodigo() {
+	    return this.Codigo;
+	}
 }
