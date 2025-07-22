@@ -1,3 +1,5 @@
-BibliotecaEscolar\.classpath
-BibliotecaEscolar\.settings
-BibliotecaEscolar\.project
+\BibliotecaEscolar
+.classpath
+.settings
+.project
+bin
