@@ -3,10 +3,10 @@ package telas;
 import javax.swing.*;
 import controle.*;
 
-public class TelaEmprestimo extends JFrame {
-	
-	public TelaEmprestimo() {
-		setTitle("Empréstimo de Obra");
+public class TelaDevolucao extends JFrame {
+
+	public TelaDevolucao() {
+		setTitle("Devolução de Obra");
 		setSize(300, 200);
 		setLayout(null);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -27,11 +27,11 @@ public class TelaEmprestimo extends JFrame {
 		campoCodigo.setBounds(130, 60, 120, 25);
 		add(campoCodigo);
 
-		JButton botaoEmprestar = new JButton("Emprestar");
-		botaoEmprestar.setBounds(90, 110, 100, 30);
-		add(botaoEmprestar);
+		JButton botaoDevolver = new JButton("Devolver");
+		botaoDevolver.setBounds(90, 110, 100, 30);
+		add(botaoDevolver);
 
-		botaoEmprestar.addActionListener(e -> {
+		botaoDevolver.addActionListener(e -> {
 			String matricula = campoMatricula.getText().trim();
 			String codigo = campoCodigo.getText().trim();
 
@@ -40,14 +40,13 @@ public class TelaEmprestimo extends JFrame {
 				return;
 			}
 
-			boolean sucesso = EmprestimoControle.registrarEmprestimo(matricula, codigo);
+			boolean sucesso = EmprestimoControle.registrarDevolucao(matricula, codigo);
 
 			if (sucesso) {
-				JOptionPane.showMessageDialog(this, "Empréstimo registrado com sucesso!");
-				dispose(); // fecha a tela
+				JOptionPane.showMessageDialog(this, "Devolução registrada com sucesso!");
+				dispose();
 			} else {
-				JOptionPane.showMessageDialog(this,
-						"Erro ao registrar empréstimo.\nVerifique a matrícula ou se a obra está disponível.");
+				JOptionPane.showMessageDialog(this, "Empréstimo não encontrado ou já devolvido.");
 			}
 		});
 

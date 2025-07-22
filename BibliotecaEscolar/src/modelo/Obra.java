@@ -21,7 +21,12 @@ public abstract class Obra {
 // Método tempo de empréstimo
 	public abstract int getTempoEmprestimo();
 
-// Método de status da obra
+// Método para visualizar o atributo status
+	public String getStatus() {
+		return this.Status;
+	}
+	
+// Método para setar o status da obra
 	public void setStatus(String status) {
 		this.Status = status;
 	}

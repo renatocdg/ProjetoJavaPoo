@@ -1,6 +1,6 @@
 package dao;
 
-import modelo.Usuario;
+import modelo.*;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.Gson;
 import java.io.FileReader;

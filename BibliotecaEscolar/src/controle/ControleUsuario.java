@@ -13,7 +13,7 @@ public class ControleUsuario {
 		this.ListaDeUsuarios = new ArrayList<>();
 	}
 
-	//Método Cadastrar Usuários
+//Método Cadastrar Usuários
 	public void CadastrarUsuario(Usuario usuario) {
 
 		for (Usuario i : ListaDeUsuarios) {
@@ -26,7 +26,7 @@ public class ControleUsuario {
 		System.out.println("Usuário cadastrado com sucesso.");
 	}
 
-	//Método Listar Usuários
+//Método Listar Usuários
 	public void ListarUsuarios() {
 
 		if (ListaDeUsuarios.isEmpty()) {
@@ -38,13 +38,14 @@ public class ControleUsuario {
 		}
 	}
 
-	//Método Editar Usuário
-	public void EditarUsuario(String Matricula, String NovoTelefone, String NovoEmail) {
+//Método Editar Usuário
+	public void EditarUsuario(String matricula, String novoTelefone, String novoEmail) {
 
 		for (Usuario i : ListaDeUsuarios) {
-			if (i.getMatricula().equals(Matricula)) {
-				i.setTelefone(NovoTelefone);
-				i.setEmail(NovoEmail);
+			
+			if (i.getMatricula().equals(matricula)) {
+				i.setTelefone(novoTelefone);
+				i.setEmail(novoEmail);
 				System.out.println("Usuário atualizado com sucesso.");
 				return;
 			} else {
@@ -53,10 +54,11 @@ public class ControleUsuario {
 		}
 	}
 
-	//Método Excluir Usuário
-	public void excluirUsuario(String Matricula) {
+//Método Excluir Usuário
+	public void excluirUsuario(String matricula) {
+		
 		for (Usuario i : ListaDeUsuarios) {
-			if (i.getMatricula().equals(Matricula)) {
+			if (i.getMatricula().equals(matricula)) {
 				ListaDeUsuarios.remove(i);
 				System.out.println("Usuário removido com sucesso.");
 				return;

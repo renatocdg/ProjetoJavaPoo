@@ -4,12 +4,12 @@ public class Usuario {
 
 	private String Matricula;
 	private String Nome;
-	private String TipoUsuario;
+	private TipoUsuario TipoUsuario;
 	private String Telefone;
 	private String Email;
 
 //construtor
-	public Usuario(String Matricula, String Nome, String TipoUsuario, String Telefone, String Email) {
+	public Usuario(String Matricula, String Nome, TipoUsuario TipoUsuario, String Telefone, String Email) {
 
 		this.Matricula = Matricula;
 		this.Nome = Nome;
@@ -34,11 +34,11 @@ public class Usuario {
 		Nome = nome;
 	}
 
-	public String getTipoUsuario() {
+	public TipoUsuario getTipoUsuario() {
 		return TipoUsuario;
 	}
 
-	public void setTipoUsuario(String tipoUsuario) {
+	public void setTipoUsuario(TipoUsuario tipoUsuario) {
 		TipoUsuario = tipoUsuario;
 	}
 
