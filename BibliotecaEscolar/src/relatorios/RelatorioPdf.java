@@ -57,4 +57,45 @@ public class RelatorioPdf {
 			e.printStackTrace();
 		}
 	}
+
+//Relatório das obras mais emprestadas do sistema
+
+	public static void gerarRelatorioObrasMaisEmprestadas(String caminhoArquivo) {
+		try {
+			List<Emprestimo> lista = EmprestimoDao.carregar();
+			Map<String, Integer> contagem = new HashMap<>();
+
+			for (Emprestimo e : lista) {
+				String chave = e.getObra().getTitulo() + " - " + e.getObra().getAutor();
+				contagem.put(chave, contagem.getOrDefault(chave, 0) + 1);
+			}
+
+			List<Map.Entry<String, Integer>> ranking = new ArrayList<>(contagem.entrySet());
+			ranking.sort((a, b) -> b.getValue().compareTo(a.getValue())); // ordem decrescente
+
+			Document doc = new Document();
+			PdfWriter.getInstance(doc, new FileOutputStream(caminhoArquivo));
+			doc.open();
+
+			doc.add(new Paragraph("Relatório de Obras Mais Emprestadas",
+					FontFactory.getFont(FontFactory.HELVETICA_BOLD, 16)));
+			doc.add(new Paragraph("Data de geração: " + LocalDate.now()));
+			doc.add(new Paragraph(" "));
+
+			PdfPTable tabela = new PdfPTable(2);
+			tabela.addCell("Obra");
+			tabela.addCell("Quantidade de Empréstimos");
+
+			for (Map.Entry<String, Integer> entry : ranking) {
+				tabela.addCell(entry.getKey());
+				tabela.addCell(String.valueOf(entry.getValue()));
+			}
+
+			doc.add(tabela);
+			doc.close();
+			System.out.println("Relatório de obras mais emprestadas gerado.");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }
