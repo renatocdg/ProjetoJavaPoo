@@ -46,7 +46,7 @@ public class EmprestimoControle {
 
 		for (Emprestimo i : lista) {
 			if (i.corresponde(matricula, codigo)) {
-				i.setDevolvido(true);
+				i.registrarDevolucao();;
 				EmprestimoDao.salvar(lista);
 
 				Obra obra = ObraDao.buscarPorCodigo(codigo);

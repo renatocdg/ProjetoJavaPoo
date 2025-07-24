@@ -74,4 +74,9 @@ public class Emprestimo {
 	            return "Em andamento";
 	        }
 	    }
+	    
+	    public boolean corresponde(String matricula, String codigo) {
+	        return usuario.getMatricula().equalsIgnoreCase(matricula) &&
+	               String.valueOf(obra.getCodigo()).equals(codigo);
+	    }
 	}

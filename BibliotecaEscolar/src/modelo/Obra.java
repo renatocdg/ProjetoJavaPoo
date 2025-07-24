@@ -23,14 +23,27 @@ public abstract class Obra {
 
 // Método para visualizar o atributo status
 	public String getStatus() {
-		return this.Status;
+		return Status;
 	}
-	
+
 // Método para setar o status da obra
 	public void setStatus(String status) {
 		this.Status = status;
 	}
+
 	public int getCodigo() {
-	    return this.Codigo;
+		return Codigo;
+	}
+
+	public String getTitulo() {
+		return Titulo;
+	}
+
+	public String getAutor() {
+		return Autor;
+	}
+
+	public int getAnoPublicacao() {
+		return AnoPublicacao;
 	}
 }
